@@ -93,12 +93,49 @@
   }
 }
 
-/* Responsive design for mobile */
-@media (max-width: 768px) {
-  .theme-toggle {
-    top: 10px;
-    right: 10px;
-    padding: 8px 16px;
-    font-size: 12px;
+/* --- Tic Tac Toe Custom Styles --- */
+.ttt-board {
+  margin: 0 auto;
+}
+
+.ttt-cell {
+  transition: background 0.18s, border 0.18s, box-shadow 0.13s;
+  will-change: background, border, box-shadow;
+}
+
+.ttt-cell:focus {
+  outline: 2px solid #3b82f6;
+  z-index: 2;
+}
+
+.ttt-cell:hover:not(:disabled) {
+  background: #e0f2fe;
+  border-color: #3b82f6;
+}
+
+/* Reset/new game button */
+.ttt-reset {
+  font-family: inherit;
+}
+
+@media (max-width: 500px) {
+  .ttt-board {
+    grid-template-columns: repeat(3, 48px) !important;
+    grid-template-rows: repeat(3, 48px) !important;
+    padding: 12px 4px 12px !important;
+    gap: 8px !important;
+  }
+  .ttt-cell {
+    width: 48px !important;
+    height: 48px !important;
+    font-size: 1.6rem !important;
+  }
+  .ttt-reset {
+    padding: 10px 18px !important;
+    font-size: 1rem !important;
+  }
+  .App-header h1 {
+    font-size: 1.3rem !important;
   }
 }
+
